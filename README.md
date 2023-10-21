@@ -1,1 +1,33 @@
 # Grambulate.js
+This bot lets you grambulate so you can solve important math problems like uhhhhhhhhhhhhhhhh...
+
+## Functions
+### `grambulatePos(numA:number, numB:number, deg?:number) : number`
+This lets you grambulate on a positive spiral
+```
+5 4 3
+6 1 2
+7 8 9 ...
+```
+`numA, numB` are numbers you operate on
+`deg` is the degree of operation, the number you start the board on
+
+(example of a board with `deg` set to `-1`)
+```
+3 2 1
+4 -1 0
+5 6 7 ...
+```
+
+If `numA` or `numB` are lower than the degree, the function throws an error.
+
+The function returns a number - the result of the operation.
+
+### ~~`grambulateNeg(numA:number, numB:number, deg?:number)`~~
+**[NOT IMPLEMENTED]**
+Will do operations on a negative spiral
+```
+-5 -4 -3
+-6 -1 -2
+-7 -8 -9
+```
