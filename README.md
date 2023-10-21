@@ -9,8 +9,8 @@ This lets you grambulate on a positive spiral
 6 1 2
 7 8 9 ...
 ```
-`numA, numB` are numbers you operate on
-`deg` is the degree of operation, the number you start the board on
+`numA, numB` are integers you operate on
+`deg` is the degree of operation, the integer you start the board on, defaults to `1`
 
 (example of a board with `deg` set to `-1`)
 ```
@@ -23,11 +23,15 @@ If `numA` or `numB` are lower than the degree, the function throws an error.
 
 The function returns a number - the result of the operation.
 
-### ~~`grambulateNeg(numA:number, numB:number, deg?:number)`~~
-**[NOT IMPLEMENTED]**
+### `grambulateNeg(numA:number, numB:number, deg?:number)`
 Will do operations on a negative spiral
 ```
 -5 -4 -3
 -6 -1 -2
 -7 -8 -9
 ```
+
+`numA, numB` are integers you operate on
+`deg` is the degree of operation, the integer you start the board on, defaults to `-1`
+
+Otherwise, stays the same as grambulatePos
