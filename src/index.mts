@@ -307,7 +307,7 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                         if(ptCur.x == ptC.x && ptCur.y == ptC.y) {
                             numC = n;
                         }
-                        n++;
+                        n--;
                     }
                     for(let i = 0; i < ring; i++) {
                         ptCur.y--;
