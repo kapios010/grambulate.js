@@ -193,4 +193,3 @@ export const grambulatePos = function (numA, numB, deg) {
     }
     return numC;
 };
-console.log(grambulatePos(7, 3));
