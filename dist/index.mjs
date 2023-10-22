@@ -17,6 +17,13 @@ export const grambulatePos = function (numA, numB, deg) {
     let ptB;
     let ptCur = { x: 0, y: 0 };
     let n = deg;
+    //Check for 0,0
+    if (numA == deg) {
+        ptA = { x: 0, y: 0 };
+    }
+    if (numB == deg) {
+        ptB = { x: 0, y: 0 };
+    }
     // The Loop
     graMap[ptCur.y] = {};
     graMap[ptCur.y][ptCur.x] = n;
@@ -212,6 +219,13 @@ export const grambulateNeg = function (numA, numB, deg) {
     let ptB;
     let ptCur = { x: 0, y: 0 };
     let n = deg;
+    //Check for 0,0
+    if (numA == deg) {
+        ptA = { x: 0, y: 0 };
+    }
+    if (numB == deg) {
+        ptB = { x: 0, y: 0 };
+    }
     // The Loop
     graMap[ptCur.y] = {};
     graMap[ptCur.y][ptCur.x] = n;
@@ -319,7 +333,7 @@ export const grambulateNeg = function (numA, numB, deg) {
                         if (ptCur.x == ptC.x && ptCur.y == ptC.y) {
                             numC = n;
                         }
-                        n++;
+                        n--;
                     }
                     for (let i = 0; i < ring; i++) {
                         ptCur.y--;
