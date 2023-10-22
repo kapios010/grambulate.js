@@ -92,6 +92,7 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
+        console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
         if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
             throw new Error("Exceeded memory usage threshold. (100%)")
         } 
@@ -147,6 +148,7 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
+                console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
                 if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                     throw new Error("Exceeded memory usage threshold. (100%)")
                 }         
@@ -195,6 +197,7 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
+            console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
             if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                 throw new Error("Exceeded memory usage threshold. (100%)")
             }     
@@ -287,6 +290,7 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
+        console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
         if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
             throw new Error("Exceeded memory usage threshold. (100%)")
         } 
@@ -343,6 +347,7 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
+                console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
                 if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                     throw new Error("Exceeded memory usage threshold. (100%)")
                 }         
@@ -392,6 +397,7 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
+            console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
             if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                 throw new Error("Exceeded memory usage threshold. (100%)")
             }     

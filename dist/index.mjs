@@ -87,6 +87,7 @@ export const grambulatePos = function (numA, numB, deg) {
             }
             ring++;
         }
+        console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss);
         if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
             throw new Error("Exceeded memory usage threshold. (100%)");
         }
@@ -148,6 +149,7 @@ export const grambulatePos = function (numA, numB, deg) {
                     }
                     ring++;
                 }
+                console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss);
                 if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                     throw new Error("Exceeded memory usage threshold. (100%)");
                 }
@@ -202,6 +204,7 @@ export const grambulatePos = function (numA, numB, deg) {
                 }
                 ring++;
             }
+            console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss);
             if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                 throw new Error("Exceeded memory usage threshold. (100%)");
             }
@@ -298,6 +301,7 @@ export const grambulateNeg = function (numA, numB, deg) {
             }
             ring++;
         }
+        console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss);
         if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
             throw new Error("Exceeded memory usage threshold. (100%)");
         }
@@ -359,6 +363,7 @@ export const grambulateNeg = function (numA, numB, deg) {
                     }
                     ring++;
                 }
+                console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss);
                 if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                     throw new Error("Exceeded memory usage threshold. (100%)");
                 }
@@ -413,6 +418,7 @@ export const grambulateNeg = function (numA, numB, deg) {
                 }
                 ring++;
             }
+            console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss);
             if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                 throw new Error("Exceeded memory usage threshold. (100%)");
             }
