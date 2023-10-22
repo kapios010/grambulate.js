@@ -26,7 +26,7 @@ If `numA` or `numB` are lower than the degree, the function throws an error.
 
 The function returns a number - the result of the operation.
 
-### `grambulateNeg(numA:number, numB:number, deg?:number)`
+### `grambulateNeg(numA:number, numB:number, deg?:number) : number`
 Will do operations on a negative spiral
 ```
 -5 -4 -3
@@ -39,3 +39,33 @@ Will do operations on a negative spiral
 `deg` is the degree of operation, the integer you start the board on, defaults to `-1`
 
 Otherwise, stays the same as grambulatePos
+
+### `calculatePosLevel(num:number, deg?:number) : number`
+Returns the "level" of the number in the spiral. 
+Equation provided courtesy of @DDMPlayer.
+
+`num` is the integer you operate on
+
+`deg` is the degree of operation, the integer you start the board on, defaults to `-1`
+
+```
+5 4 3       1 1 1   
+6 1 2       1 0 1
+7 8 9 ...   1 1 1 ...
+```
+Onions have layers.
+
+### `calculateNegLevel(num:number, deg?:number) : number`
+Returns the "level" of the number in the spiral.
+Equation provided courtesy of @DDMPlayer and modified by @kapios010 to hopefully work well on negative numbers.
+
+`num` is the integer you operate on
+
+`deg` is the degree of operation, the integer you start the board on, defaults to `-1`
+
+```
+-5 -4 -3       1 1 1   
+-6 -1 -2       1 0 1
+-7 -8 -9 ...   1 1 1 ...
+```
+Onions have layers.
