@@ -92,7 +92,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
-
+        if(process.memoryUsage().heapUsed / process.memoryUsage().heapTotal > 0.95) {
+            throw new Error("Exceeded memory usage threshold. (95%)")
+        } 
     }
     // Calculate the vector and the position of point C
     let vector: coordSet = { x: ptB.x - ptA.x, y: ptB.y - ptA.y }
@@ -145,7 +147,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
-        
+                if(process.memoryUsage().heapUsed / process.memoryUsage().heapTotal > 0.95) {
+                    throw new Error("Exceeded memory usage threshold. (95%)")
+                }         
             }
         }
     } else {
@@ -191,7 +195,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
-    
+            if(process.memoryUsage().heapUsed / process.memoryUsage().heapTotal > 0.95) {
+                throw new Error("Exceeded memory usage threshold. (95%)")
+            }     
         }
     }
 
@@ -281,6 +287,9 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
+        if(process.memoryUsage().heapUsed / process.memoryUsage().heapTotal > 0.95) {
+            throw new Error("Exceeded memory usage threshold. (95%)")
+        } 
 
     }
     // Calculate the vector and the position of point C
@@ -334,9 +343,12 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
-        
+                if(process.memoryUsage().heapUsed / process.memoryUsage().heapTotal > 0.95) {
+                    throw new Error("Exceeded memory usage threshold. (95%)")
+                }         
             }
         }
+        
     } else {
         while (!numC) {
             if(ring % 2 != 0) {
@@ -380,7 +392,9 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
-    
+            if(process.memoryUsage().heapUsed / process.memoryUsage().heapTotal > 0.95) {
+                throw new Error("Exceeded memory usage threshold. (95%)")
+            }     
         }
     }
 
