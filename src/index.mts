@@ -94,7 +94,6 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
-        console.log(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit)
         if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
             throw new Error("Exceeded memory usage threshold. (95%)")
         } 
@@ -150,7 +149,6 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
-                console.log(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit)
                 if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
                     throw new Error("Exceeded memory usage threshold. (95%)")
                 }        
@@ -199,7 +197,6 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
-            console.log(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit)
             if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
                 throw new Error("Exceeded memory usage threshold. (95%)")
             }    
@@ -292,7 +289,6 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
-        console.log(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit)
         if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
             throw new Error("Exceeded memory usage threshold. (95%)")
         } 
@@ -349,7 +345,6 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
-                console.log(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit)
                 if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
                     throw new Error("Exceeded memory usage threshold. (95%)")
                 }         
@@ -399,7 +394,6 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
-            console.log(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit)
             if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
                 throw new Error("Exceeded memory usage threshold. (95%)")
             }     
