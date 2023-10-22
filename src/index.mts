@@ -9,6 +9,8 @@ interface numberM {
     } 
 }
 
+export let writeDebug: boolean = false;
+
 export const grambulatePos = function(numA:number, numB:number, deg?:number) : number {
     // Truncate numbers
     numA = Math.trunc(numA);
@@ -92,6 +94,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
+        if(writeDebug) {
+            console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
+        }
         if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
             throw new Error("Exceeded memory usage threshold. (100%)")
         } 
@@ -147,6 +152,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
+                if(writeDebug) {
+                    console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
+                }
                 if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                     throw new Error("Exceeded memory usage threshold. (100%)")
                 }         
@@ -194,6 +202,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                     n++;
                 }
                 ring++
+            }
+            if(writeDebug) {
+                console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
             }
             if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                 throw new Error("Exceeded memory usage threshold. (100%)")
@@ -287,6 +298,9 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
+        if(writeDebug) {
+            console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
+        }
         if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
             throw new Error("Exceeded memory usage threshold. (100%)")
         } 
@@ -343,6 +357,9 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
+                if(writeDebug) {
+                    console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
+                }
                 if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                     throw new Error("Exceeded memory usage threshold. (100%)")
                 }         
@@ -391,6 +408,9 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
                     n--;
                 }
                 ring++
+            }
+            if(writeDebug) {
+                console.log(process.memoryUsage().heapTotal / process.memoryUsage().rss)
             }
             if(process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
                 throw new Error("Exceeded memory usage threshold. (100%)")
