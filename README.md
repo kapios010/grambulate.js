@@ -1,5 +1,6 @@
 # Grambulate.js
-#### ⚠️ Warning: This has caused a Heap Limit Allocation Fail on my machine multiple times with large values 
+**⚠️ Warning: This has caused a Heap Limit Allocation Fail on my machine multiple times with large values** 
+
 This package lets you grambulate so you can solve important math problems like uhhhhhhhhhhhhhhhh...
 
 ## Functions
@@ -11,6 +12,7 @@ This lets you grambulate on a positive spiral
 7 8 9 ...
 ```
 `numA, numB` are integers you operate on
+
 `deg` is the degree of operation, the integer you start the board on, defaults to `1`
 
 (example of a board with `deg` set to `-1`)
@@ -29,10 +31,11 @@ Will do operations on a negative spiral
 ```
 -5 -4 -3
 -6 -1 -2
--7 -8 -9
+-7 -8 -9 ...
 ```
 
 `numA, numB` are integers you operate on
+
 `deg` is the degree of operation, the integer you start the board on, defaults to `-1`
 
 Otherwise, stays the same as grambulatePos
