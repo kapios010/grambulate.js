@@ -11,6 +11,7 @@ This lets you grambulate on a positive spiral
 7 8 9 ...
 ```
 `numA, numB` are integers you operate on
+
 `deg` is the degree of operation, the integer you start the board on, defaults to `1`
 
 (example of a board with `deg` set to `-1`)
@@ -33,6 +34,7 @@ Will do operations on a negative spiral
 ```
 
 `numA, numB` are integers you operate on
+
 `deg` is the degree of operation, the integer you start the board on, defaults to `-1`
 
 Otherwise, stays the same as grambulatePos
