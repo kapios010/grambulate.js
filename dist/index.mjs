@@ -1,3 +1,4 @@
+import { getHeapStatistics } from "v8";
 export const grambulatePos = function (numA, numB, deg) {
     // Truncate numbers
     numA = Math.trunc(numA);
@@ -87,8 +88,8 @@ export const grambulatePos = function (numA, numB, deg) {
             }
             ring++;
         }
-        if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
-            throw new Error("Exceeded memory usage threshold. (100%)");
+        if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+            throw new Error("Exceeded memory usage threshold. (95%)");
         }
     }
     // Calculate the vector and the position of point C
@@ -148,8 +149,8 @@ export const grambulatePos = function (numA, numB, deg) {
                     }
                     ring++;
                 }
-                if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
-                    throw new Error("Exceeded memory usage threshold. (100%)");
+                if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                    throw new Error("Exceeded memory usage threshold. (95%)");
                 }
             }
         }
@@ -202,8 +203,8 @@ export const grambulatePos = function (numA, numB, deg) {
                 }
                 ring++;
             }
-            if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
-                throw new Error("Exceeded memory usage threshold. (100%)");
+            if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                throw new Error("Exceeded memory usage threshold. (95%)");
             }
         }
     }
@@ -298,8 +299,8 @@ export const grambulateNeg = function (numA, numB, deg) {
             }
             ring++;
         }
-        if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
-            throw new Error("Exceeded memory usage threshold. (100%)");
+        if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+            throw new Error("Exceeded memory usage threshold. (95%)");
         }
     }
     // Calculate the vector and the position of point C
@@ -359,8 +360,8 @@ export const grambulateNeg = function (numA, numB, deg) {
                     }
                     ring++;
                 }
-                if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
-                    throw new Error("Exceeded memory usage threshold. (100%)");
+                if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                    throw new Error("Exceeded memory usage threshold. (95%)");
                 }
             }
         }
@@ -413,8 +414,8 @@ export const grambulateNeg = function (numA, numB, deg) {
                 }
                 ring++;
             }
-            if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
-                throw new Error("Exceeded memory usage threshold. (100%)");
+            if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                throw new Error("Exceeded memory usage threshold. (95%)");
             }
         }
     }
