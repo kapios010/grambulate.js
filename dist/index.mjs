@@ -421,3 +421,25 @@ export const grambulateNeg = function (numA, numB, deg) {
     }
     return numC;
 };
+export const calculatePosLevel = function (num, deg) {
+    num = Math.trunc(num);
+    deg = Math.trunc(deg);
+    if (num < deg) {
+        throw new Error("Incorrect function input(s).");
+    }
+    let result;
+    // Equation courtesy of @DDMPlayer
+    result = Math.floor((Math.sqrt(Math.floor(((num - (deg - 1)) - 2) / 8) * 8 + 1) - 1) / 2) + 1;
+    return result;
+};
+export const calculateNegLevel = function (num, deg) {
+    num = Math.trunc(num);
+    deg = Math.trunc(deg);
+    if (num > deg) {
+        throw new Error("Incorrect function input(s).");
+    }
+    let result;
+    // Equation courtesy of @DDMPlayer
+    result = Math.floor((Math.sqrt(Math.floor((-(num - (deg - 1)) - 2) / 8) * 8 + 1) - 1) / 2) + 1;
+    return result;
+};

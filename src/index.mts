@@ -402,3 +402,27 @@ export const grambulateNeg = function(numA:number, numB:number, deg?:number) : n
 
     return numC;
 }
+
+export const calculatePosLevel = function(num:number, deg:number) : number {
+    num = Math.trunc(num);
+    deg = Math.trunc(deg);
+    if(num < deg) {
+        throw new Error("Incorrect function input(s).");
+    }
+    let result:number;
+    // Equation courtesy of @DDMPlayer
+    result = Math.floor((Math.sqrt(Math.floor(((num-(deg-1))-2)/8) * 8 + 1) - 1)/2) + 1;
+    return result;
+}   
+
+export const calculateNegLevel = function(num:number, deg:number): number {
+    num = Math.trunc(num);
+    deg = Math.trunc(deg);
+    if(num > deg) {
+        throw new Error("Incorrect function input(s).");
+    }
+    let result:number;
+    // Equation courtesy of @DDMPlayer
+    result = Math.floor((Math.sqrt(Math.floor((-(num-(deg-1))-2)/8) * 8 + 1) - 1)/2) + 1;
+    return result;
+}
