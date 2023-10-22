@@ -1,6 +1,4 @@
-# Grambulate.js
-**⚠️ Warning: This has caused a Heap Limit Allocation Fail on my machine multiple times with large values** 
-
+# Grambulate.js 
 This package lets you grambulate so you can solve important math problems like uhhhhhhhhhhhhhhhh...
 
 ## Functions
@@ -69,3 +67,16 @@ Equation provided courtesy of [@DDMPlayer](https://github.com/DDMPlayer) and mod
 -7 -8 -9 ...   1 1 1 ...
 ```
 Onions have layers.
+
+## Errors
+### `Incorrect function input(s).`
+Is thrown when a function input prevents the function from being calculated.
+Examples:
+* In `grambulatePos`, either `numA` or `numB` are smaller than `deg`
+* In `calculateNegLevel`, `num` is larger than `deg`
+
+### `Exceeded memory usage threshold. (95%)`
+Is thrown when the program uses more memory than the threshold, which is set to 95%, allows. That can happen when using large numbers. This approach prevents program crashes and memory leaks.
+
+## Thank you
+Thanks for using the library, even if it just stems from a joke! ❤️
