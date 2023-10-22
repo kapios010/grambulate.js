@@ -87,8 +87,8 @@ export const grambulatePos = function (numA, numB, deg) {
             }
             ring++;
         }
-        if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 0.95) {
-            throw new Error("Exceeded memory usage threshold. (95%)");
+        if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
+            throw new Error("Exceeded memory usage threshold. (100%)");
         }
     }
     // Calculate the vector and the position of point C
@@ -148,8 +148,8 @@ export const grambulatePos = function (numA, numB, deg) {
                     }
                     ring++;
                 }
-                if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 0.95) {
-                    throw new Error("Exceeded memory usage threshold. (95%)");
+                if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
+                    throw new Error("Exceeded memory usage threshold. (100%)");
                 }
             }
         }
@@ -202,8 +202,8 @@ export const grambulatePos = function (numA, numB, deg) {
                 }
                 ring++;
             }
-            if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 0.95) {
-                throw new Error("Exceeded memory usage threshold. (95%)");
+            if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
+                throw new Error("Exceeded memory usage threshold. (100%)");
             }
         }
     }
@@ -298,8 +298,8 @@ export const grambulateNeg = function (numA, numB, deg) {
             }
             ring++;
         }
-        if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 0.95) {
-            throw new Error("Exceeded memory usage threshold. (95%)");
+        if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
+            throw new Error("Exceeded memory usage threshold. (100%)");
         }
     }
     // Calculate the vector and the position of point C
@@ -359,8 +359,8 @@ export const grambulateNeg = function (numA, numB, deg) {
                     }
                     ring++;
                 }
-                if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 0.95) {
-                    throw new Error("Exceeded memory usage threshold. (95%)");
+                if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
+                    throw new Error("Exceeded memory usage threshold. (100%)");
                 }
             }
         }
@@ -413,8 +413,8 @@ export const grambulateNeg = function (numA, numB, deg) {
                 }
                 ring++;
             }
-            if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 0.95) {
-                throw new Error("Exceeded memory usage threshold. (95%)");
+            if (process.memoryUsage().heapTotal / process.memoryUsage().rss > 1) {
+                throw new Error("Exceeded memory usage threshold. (100%)");
             }
         }
     }
