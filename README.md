@@ -30,7 +30,7 @@ Will do operations on a negative spiral
 ```
 -5 -4 -3
 -6 -1 -2
--7 -8 -9
+-7 -8 -9 ...
 ```
 
 `numA, numB` are integers you operate on
