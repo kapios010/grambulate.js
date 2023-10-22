@@ -42,7 +42,7 @@ Otherwise, stays the same as grambulatePos
 
 ### `calculatePosLevel(num:number, deg?:number) : number`
 Returns the "level" of the number in the spiral. 
-Equation provided courtesy of @DDMPlayer.
+Equation provided courtesy of [@DDMPlayer](https://github.com/DDMPlayer).
 
 `num` is the integer you operate on
 
@@ -57,7 +57,7 @@ Onions have layers.
 
 ### `calculateNegLevel(num:number, deg?:number) : number`
 Returns the "level" of the number in the spiral.
-Equation provided courtesy of @DDMPlayer and modified by @kapios010 to hopefully work well on negative numbers.
+Equation provided courtesy of [@DDMPlayer](https://github.com/DDMPlayer) and modified by [@kapios010](https://github.com/kapios010) to hopefully work well on negative numbers.
 
 `num` is the integer you operate on
 
