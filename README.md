@@ -1,6 +1,12 @@
 # Grambulate.js 
 This package lets you grambulate so you can solve important math problems like uhhhhhhhhhhhhhhhh...
 
+## Installation
+To install this using npm, use:
+```
+npm i github:kapios010/grambulate.js
+```
+
 ## Functions
 ### `grambulatePos(numA:number, numB:number, deg?:number) : number`
 This lets you grambulate on a positive spiral
