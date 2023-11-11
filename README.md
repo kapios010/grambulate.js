@@ -4,7 +4,7 @@ This package lets you grambulate so you can solve important math problems like u
 ## Installation
 To install this using npm, use:
 ```
-npm i github:kapios010/grambulate.js
+npm i kapios010/grambulate.js
 ```
 
 ## Functions
