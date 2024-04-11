@@ -1,7 +1,11 @@
 {
   "name": "grambulate.js",
   "version": "2.0.0",
-  "keywords": ["grambulate", "grambulation", "math"],
+  "keywords": [
+    "grambulate",
+    "grambulation",
+    "math"
+  ],
   "description": "This package lets you use grambulation for many useful operations such as (missing footage) and (photo not found)!",
   "exports": {
     ".": "./dist/index.mjs"
