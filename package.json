@@ -7,9 +7,8 @@
     "math"
   ],
   "description": "This package lets you use grambulation for many useful operations such as (missing footage) and (photo not found)!",
-  "exports": {
-    ".": "./dist/index.mjs"
-  },
+  "main" : "./dist/index.mjs",
+  "types" : "./dist/index.d.mts",
   "author": "kapios010",
   "license": "MIT",
   "devDependencies": {
