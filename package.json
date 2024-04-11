@@ -1,6 +1,6 @@
 {
   "name": "grambulate.js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "keywords": [
     "grambulate",
     "grambulation",
@@ -9,6 +9,8 @@
   "scripts": {
     "build": "tsc"
   },
+  "homepage": "https://github.com/kapios010/grambulate.js",
+  "readme": "https://github.com/kapios010/grambulate.js/blob/main/README.md",
   "description": "This package lets you use grambulation for many useful operations such as (missing footage) and (photo not found)!",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
