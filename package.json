@@ -6,6 +6,9 @@
     "grambulation",
     "math"
   ],
+  "scripts": {
+    "build": "tsc"
+  },
   "description": "This package lets you use grambulation for many useful operations such as (missing footage) and (photo not found)!",
   "main" : "./dist/index.mjs",
   "types" : "./dist/index.d.mts",
