@@ -89,6 +89,7 @@ export const grambulatePos = function (numA, numB, deg) {
             }
             ring++;
         }
+        console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem);
         if (getHeapStatistics().number_of_native_contexts > initMem) {
             throw new Error("Memory leak detected. Exiting.");
         }
@@ -150,6 +151,7 @@ export const grambulatePos = function (numA, numB, deg) {
                     }
                     ring++;
                 }
+                console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem);
                 if (getHeapStatistics().number_of_native_contexts > initMem) {
                     throw new Error("Memory leak detected. Exiting.");
                 }
@@ -204,6 +206,7 @@ export const grambulatePos = function (numA, numB, deg) {
                 }
                 ring++;
             }
+            console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem);
             if (getHeapStatistics().number_of_native_contexts > initMem) {
                 throw new Error("Memory leak detected. Exiting.");
             }
