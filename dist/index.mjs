@@ -1,5 +1,6 @@
 import { getHeapStatistics } from "v8";
 export const grambulatePos = function (numA, numB, deg) {
+    let initMem = getHeapStatistics().number_of_native_contexts;
     // Truncate numbers
     numA = Math.trunc(numA);
     numB = Math.trunc(numB);
@@ -88,8 +89,8 @@ export const grambulatePos = function (numA, numB, deg) {
             }
             ring++;
         }
-        if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
-            throw new Error("Exceeded memory usage threshold. (95%)");
+        if (getHeapStatistics().number_of_native_contexts > initMem) {
+            throw new Error("Memory leak detected. Exiting.");
         }
     }
     // Calculate the vector and the position of point C
