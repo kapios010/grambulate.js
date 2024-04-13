@@ -89,7 +89,7 @@ export const grambulatePos = function (numA, numB, deg) {
             }
             ring++;
         }
-        console.log("A: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit);
+        console.log("A: ", getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit);
         if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
             throw new Error("Exceeded memory usage threshold. (95%)");
         }
@@ -151,7 +151,7 @@ export const grambulatePos = function (numA, numB, deg) {
                     }
                     ring++;
                 }
-                console.log("B: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit);
+                console.log("B: ", getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit);
                 if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
                     throw new Error("Exceeded memory usage threshold. (95%)");
                 }
@@ -206,7 +206,7 @@ export const grambulatePos = function (numA, numB, deg) {
                 }
                 ring++;
             }
-            console.log("C: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit);
+            console.log("C: ", getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit);
             if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
                 throw new Error("Exceeded memory usage threshold. (95%)");
             }
