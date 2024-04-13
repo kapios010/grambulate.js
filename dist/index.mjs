@@ -150,8 +150,8 @@ export const grambulatePos = function (numA, numB, deg) {
                     }
                     ring++;
                 }
-                if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
-                    throw new Error("Exceeded memory usage threshold. (95%)");
+                if (getHeapStatistics().number_of_native_contexts > initMem) {
+                    throw new Error("Memory leak detected. Exiting.");
                 }
             }
         }
@@ -204,8 +204,8 @@ export const grambulatePos = function (numA, numB, deg) {
                 }
                 ring++;
             }
-            if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
-                throw new Error("Exceeded memory usage threshold. (95%)");
+            if (getHeapStatistics().number_of_native_contexts > initMem) {
+                throw new Error("Memory leak detected. Exiting.");
             }
         }
     }
