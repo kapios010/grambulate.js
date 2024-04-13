@@ -8,10 +8,11 @@ interface coordSet {
 interface numberM {
     [index: number]: {
         [index:number] : number ;
-    } 
+    }
 }
 
 export const grambulatePos = function(numA:number, numB:number, deg?:number) : number {
+    let initMem = getHeapStatistics().number_of_native_contexts;
     // Truncate numbers
     numA = Math.trunc(numA);
     numB = Math.trunc(numB);
@@ -94,9 +95,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
-        if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
-            throw new Error("Exceeded memory usage threshold. (95%)")
-        } 
+        if(getHeapStatistics().number_of_native_contexts > initMem) {
+            throw new Error("Memory leak detected. Exiting.")
+        }
     }
     // Calculate the vector and the position of point C
     let vector: coordSet = { x: ptB.x - ptA.x, y: ptB.y - ptA.y }
