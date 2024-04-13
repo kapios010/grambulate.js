@@ -1,6 +1,9 @@
 # Grambulate.js 
 This package lets you grambulate so you can solve important math problems like uhhhhhhhhhhhhhhhh...
 
+[!CAUTION]
+Even though this uses v8 for detection of excess memory usage, I've only recently experienced that this still has the chance of crashing and will work on a fix.
+
 ## Installation
 To install this using npm, use:
 ```
@@ -46,7 +49,7 @@ Otherwise, stays the same as grambulatePos
 
 ### `calculatePosLevel(num:number, deg?:number) : number`
 Returns the "level" of the number in the spiral. 
-Equation provided courtesy of [@DDMPlayer](https://github.com/DDMPlayer).
+Equation provided courtesy of @DDMPlayer.
 
 `num` is the integer you operate on
 
@@ -61,7 +64,7 @@ Onions have layers.
 
 ### `calculateNegLevel(num:number, deg?:number) : number`
 Returns the "level" of the number in the spiral.
-Equation provided courtesy of [@DDMPlayer](https://github.com/DDMPlayer) and modified by [@kapios010](https://github.com/kapios010) to hopefully work well on negative numbers.
+Equation provided courtesy of @DDMPlayer and modified by myself (@kapios010) to hopefully work well on negative numbers.
 
 `num` is the integer you operate on
 
