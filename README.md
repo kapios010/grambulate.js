@@ -1,8 +1,8 @@
 # Grambulate.js 
 This package lets you grambulate so you can solve important math problems like uhhhhhhhhhhhhhhhh...
 
-[!CAUTION]
-Even though this uses v8 for detection of excess memory usage, I've only recently experienced that this still has the chance of crashing and will work on a fix.
+> [!CAUTION]
+> Even though this uses v8 for detection of excess memory usage, I've only recently experienced that this still has the chance of crashing and will work on a fix.
 
 ## Installation
 To install this using npm, use:
