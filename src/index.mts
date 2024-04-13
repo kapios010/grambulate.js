@@ -95,10 +95,10 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
-        console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem)
-        if(getHeapStatistics().number_of_native_contexts > initMem) {
-            throw new Error("Memory leak detected. Exiting.")
-        }
+        console.log("A: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit)
+        if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+            throw new Error("Exceeded memory usage threshold. (95%)")
+        } 
     }
     // Calculate the vector and the position of point C
     let vector: coordSet = { x: ptB.x - ptA.x, y: ptB.y - ptA.y }
@@ -151,10 +151,10 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
-                console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem)
-                if(getHeapStatistics().number_of_native_contexts > initMem) {
-                    throw new Error("Memory leak detected. Exiting.")
-                }
+                console.log("B: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit)
+                if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                    throw new Error("Exceeded memory usage threshold. (95%)")
+                } 
             }
         }
     } else {
@@ -200,10 +200,10 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
-            console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem)
-            if(getHeapStatistics().number_of_native_contexts > initMem) {
-                throw new Error("Memory leak detected. Exiting.")
-            }
+            console.log("C: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit)
+            if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                throw new Error("Exceeded memory usage threshold. (95%)")
+            } 
         }
     }
 

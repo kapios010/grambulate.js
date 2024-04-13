@@ -89,9 +89,9 @@ export const grambulatePos = function (numA, numB, deg) {
             }
             ring++;
         }
-        console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem);
-        if (getHeapStatistics().number_of_native_contexts > initMem) {
-            throw new Error("Memory leak detected. Exiting.");
+        console.log("A: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit);
+        if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+            throw new Error("Exceeded memory usage threshold. (95%)");
         }
     }
     // Calculate the vector and the position of point C
@@ -151,9 +151,9 @@ export const grambulatePos = function (numA, numB, deg) {
                     }
                     ring++;
                 }
-                console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem);
-                if (getHeapStatistics().number_of_native_contexts > initMem) {
-                    throw new Error("Memory leak detected. Exiting.");
+                console.log("B: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit);
+                if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                    throw new Error("Exceeded memory usage threshold. (95%)");
                 }
             }
         }
@@ -206,9 +206,9 @@ export const grambulatePos = function (numA, numB, deg) {
                 }
                 ring++;
             }
-            console.log("A: ", getHeapStatistics().number_of_native_contexts, "  ..  ", initMem);
-            if (getHeapStatistics().number_of_native_contexts > initMem) {
-                throw new Error("Memory leak detected. Exiting.");
+            console.log("C: ", getHeapStatistics().total_heap_size, "  ..  ", getHeapStatistics().heap_size_limit);
+            if (getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
+                throw new Error("Exceeded memory usage threshold. (95%)");
             }
         }
     }
