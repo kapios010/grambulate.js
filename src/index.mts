@@ -95,6 +95,7 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
             }
             ring++
         }
+
         if(getHeapStatistics().number_of_native_contexts > initMem) {
             throw new Error("Memory leak detected. Exiting.")
         }
@@ -150,9 +151,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                     }
                     ring++
                 }
-                if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
-                    throw new Error("Exceeded memory usage threshold. (95%)")
-                }        
+                if(getHeapStatistics().number_of_native_contexts > initMem) {
+                    throw new Error("Memory leak detected. Exiting.")
+                }
             }
         }
     } else {
@@ -198,9 +199,9 @@ export const grambulatePos = function(numA:number, numB:number, deg?:number) : n
                 }
                 ring++
             }
-            if(getHeapStatistics().total_heap_size / getHeapStatistics().heap_size_limit > 0.95) {
-                throw new Error("Exceeded memory usage threshold. (95%)")
-            }    
+            if(getHeapStatistics().number_of_native_contexts > initMem) {
+                throw new Error("Memory leak detected. Exiting.")
+            }
         }
     }
 
