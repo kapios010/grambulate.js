@@ -1,0 +1,21 @@
+{
+    "name": "grambulate.js",
+    "type": "module",
+    "private": false,
+    "scripts": {
+        "dev": "tsc --watch",
+        "build": "tsup src/index.ts --format cjs,esm --dts"
+    },
+    "exports": {
+        ".": {
+            "types": "./src/index.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "devDependencies": {
+        "@grambulate/typescript-config": "workspace:*",
+        "tsup": "^8.5.0",
+        "typescript": "latest",
+        "vitest": "^3.2.4"
+    }
+}
