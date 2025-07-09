@@ -1,7 +1,90 @@
 import { Vector2D } from "./vector2d.js";
+import { isEqual } from "lodash";
 
 interface GrambulationMap<Holder> {
-    [key:number]: Holder
+  [key: number]: Holder;
+}
+
+export function getRingNumber(
+  input: number,
+  onPlusBoard: boolean,
+  degree: number = (onPlusBoard && 1) || -1
+): number {
+  input = Math.trunc(input);
+  degree = Math.trunc(degree);
+  if (input < degree) {
+    throw new RangeError("Input cannot be lower than degree.");
+  }
+  if (input == degree) return 0;
+  let result: number;
+  let multiplier = (onPlusBoard && 1) || -1;
+  // Equation courtesy of @DDMPlayer
+  result =
+    Math.floor(
+      (Math.sqrt(
+        Math.floor((multiplier * (input - (degree - 1) - 2)) / 8) * 8 + 1
+      ) -
+        1) /
+        2
+    ) + 1;
+  return result;
+}
+
+export function getPositionOfNumber(
+  input: number,
+  onPlusBoard: boolean,
+  degree: number = (onPlusBoard && 1) || -1
+): Vector2D {
+  //Truncate inputs
+  input = Math.trunc(input);
+  degree = Math.trunc(degree);
+  const multiplier = (onPlusBoard && 1) || -1;
+  if (input < multiplier * degree)
+    throw new RangeError("Inputs cannot be lower than degree.");
+  if (input == degree) return new Vector2D(0, 0);
+  let inputPosition: Vector2D | null = null;
+  let pointerValue = degree;
+  let pointerPosition = new Vector2D(0, 0);
+  let ring = getRingNumber(input, onPlusBoard, degree);
+  pointerPosition.moveTo(-ring, ring);
+  pointerValue = (degree + 4 * Math.pow(ring, 2)) * multiplier;
+  if (input == pointerValue) return pointerPosition;
+  // LEFT AND TOP
+  // Left Side of ring
+  while (pointerPosition.y > -ring) {
+    pointerPosition.y--;
+    pointerValue += multiplier;
+    if (input == pointerValue) return pointerPosition;
+  }
+  // Reset to initial position
+  pointerPosition.moveTo(-ring, ring);
+  pointerValue = (degree + 4 * Math.pow(ring, 2)) * multiplier;
+  // Top Side of ring
+  while (pointerPosition.x < ring) {
+    pointerPosition.x++;
+    pointerValue -= multiplier;
+    if (input == pointerValue) return pointerPosition;
+  }
+  // Right side of ring
+  while (pointerPosition.y > -ring + 1) {
+    pointerPosition.y--;
+    pointerValue -= multiplier;
+    if (input == pointerValue) return pointerPosition;
+  }
+  // BOTTOM
+  // Set up position
+  pointerPosition.moveTo(ring, -ring);
+  pointerValue = (degree - 1 + Math.pow(2 * ring + 1, 2)) * multiplier;
+  if (input == pointerValue) return pointerPosition;
+  // Bottom side of ring
+  while (pointerPosition.x > -ring) {
+    pointerPosition.x--;
+    pointerValue -= multiplier;
+    if (input == pointerValue) return pointerPosition;
+  }
+  throw new Error(
+    `An error in ring calculation has occured. Please report this.`
+  );
 }
 
 export class Grambulator {
@@ -28,52 +111,59 @@ export class Grambulator {
     // If both inputs are the same, the vector is [0,0] so the output is the same number
     if (inputA == inputB) return inputA;
     // Declaring variables
-    let map: GrambulationMap<GrambulationMap<number>> = {};
-    let groupCount: number = 1;
-    let positionA: Vector2D | null = null;
-    let positionB: Vector2D | null = null;
-    let pointerPosition: Vector2D = new Vector2D(0, 0);
-    let pointerValue: number = degree;
-    // We know the position of the input if it equals the degree
-    if (inputA == degree) positionA = new Vector2D(0, 0);
-    if (inputB == degree) positionB = new Vector2D(0, 0);
-    // Otherwise we search
-    while(positionA == null || positionB == null) {
-        let howToMove = groupCount%4
-        switch(howToMove) {
-
-        }
+    let positionA: Vector2D = getPositionOfNumber(inputA, true, degree);
+    let positionB: Vector2D = getPositionOfNumber(inputB, true, degree);
+    let vectorAB: Vector2D = Vector2D.calculateFromPoints(
+      positionA,
+      positionB
+    );
+    let positionC = Vector2D.addVector(positionB, vectorAB)
+    console.log(`${positionA} <-> ${positionB} => ${positionC}`)
+    if (isEqual(positionC, new Vector2D(0, 0))) return degree;
+    let ring = 0;
+    let pointerValue = degree;
+    let pointerPosition = new Vector2D(0, 0);
+    while (ring < this.limit) {
+      pointerPosition.moveTo(-ring, ring);
+      pointerValue = (degree + 4 * Math.pow(ring, 2));
+      if (isEqual(positionC, pointerPosition)) return pointerValue;
+      // LEFT AND TOP
+      // Left Side of ring
+      while (pointerPosition.y > -ring) {
+        pointerPosition.y--;
+        pointerValue ++;
+        if (isEqual(positionC, pointerPosition)) return pointerValue;
+      }
+      // Reset to initial position
+      pointerPosition.moveTo(-ring, ring);
+      pointerValue = (degree + 4 * Math.pow(ring, 2));
+      // Top Side of ring
+      while (pointerPosition.x < ring) {
+        pointerPosition.x++;
+        pointerValue--;
+        if (isEqual(positionC, pointerPosition)) return pointerValue;
+      }
+      // Right side of ring
+      while (pointerPosition.y > -ring + 1) {
+        pointerPosition.y--;
+        pointerValue--;
+        if (isEqual(positionC, pointerPosition)) return pointerValue;
+      }
+      // BOTTOM
+      // Set up position
+      pointerPosition.moveTo(ring, -ring);
+      pointerValue = (degree - 1 + Math.pow(2 * ring + 1, 2));
+      if (isEqual(positionC, pointerPosition)) return pointerValue;
+      // Bottom side of ring
+      while (pointerPosition.x > -ring) {
+        pointerPosition.x--;
+        pointerValue--;
+        if (isEqual(positionC, pointerPosition)) return pointerValue;
+      }
+      ring++
     }
-    console.log(positionA.toString())
-    console.log(positionB.toString())
-    let vectorAB = new Vector2D(positionB.x - positionA.x, positionB.y - positionA.y)
-    let positionC = new Vector2D(positionB.x + vectorAB.x, positionB.y +vectorAB.y)
-    let valueC: number|null = null
-    if(map[positionC.y] != undefined && map[positionC.y]![positionC.x] != undefined) {
-        valueC = map[positionC.y]![positionC.x]!
-    }
-    else {
-        while(valueC == null) {
-            let isHalfRingTop = halfRing%2
-            let multiplier = isHalfRingTop && 1 || -1
-            if(map[pointerPosition.y] == undefined)
-                map[pointerPosition.y] = {}
-            map[pointerPosition.y]![pointerPosition.x] = pointerValue
-            if(pointerPosition.x == positionC.x && pointerPosition.y == positionC.y) valueC = pointerValue
-            if(halfRingMoves < halfRing) {
-                pointerPosition.y += multiplier
-            } else {
-                pointerPosition.x -= multiplier
-            }
-            if(halfRing*2 >= this.limit) throw new Error(`Cannot finish grambulating. Reached spiral limit of ${this.limit}`)
-            if(halfRingMoves == halfRing*2+1) {
-                halfRing++
-                halfRingMoves == 0
-            }
-            pointerValue++
-            halfRingMoves++
-        }
-    }
-    return valueC!
+    throw new Error(
+      `Could not get position of number. Reached set spiral limit of ${this.limit}`
+    );
   }
 }
