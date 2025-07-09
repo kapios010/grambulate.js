@@ -15,12 +15,20 @@
         ".": {
             "types": "./src/index.ts",
             "default": "./dist/index.js"
+        },
+        "./*": {
+            "types": "./src/*.ts",
+            "default": "./dist/*.js"
         }
     },
     "devDependencies": {
         "@grambulate/typescript-config": "workspace:*",
+        "@types/lodash": "^4.17.20",
         "tsup": "^8.5.0",
         "typescript": "latest",
         "vitest": "^3.2.4"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21"
     }
 }
