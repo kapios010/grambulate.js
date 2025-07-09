@@ -8,6 +8,12 @@
         "name": "kapios010",
         "url": "https://kapios.dev"
     },
+    "repository": {
+        "directory": "packages/grambulate.js",
+        "url": "https://github.com/kapios010/grambulate.js.git",
+        "type": "git"
+    },
+    "homepage": "grambulatejs.kapios.dev",
     "keywords": ["grambulation", "grambulate", "math", "april", "fools", "boss baby movie 2017 free download"],
     "license": "MIT",
     "type": "module",
