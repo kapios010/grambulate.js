@@ -1,0 +1,44 @@
+{
+    "name": "grambulate.js",
+    "version": "3.0.0",
+    "contributors": [
+        {"name": "DDMPlayer", "url": "https://ddmplayer.itch.io"}
+    ],
+    "author": {
+        "name": "kapios010",
+        "url": "https://kapios.dev"
+    },
+    "keywords": ["grambulation", "grambulate", "math", "april", "fools", "boss baby movie 2017 free download"],
+    "license": "MIT",
+    "type": "module",
+    "private": false,
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "test": "vitest run --reporter=verbose"
+    },
+    "exports": {
+        ".": {
+            "types": "./src/index.ts",
+            "default": "./dist/index.js"
+        },
+        "./*": {
+            "types": "./src/*.ts",
+            "default": "./dist/*.js"
+        }
+    },
+    "devDependencies": {
+        "@grambulate/typescript-config": "workspace:*",
+        "@types/lodash": "^4.17.20",
+        "tsup": "^8.5.0",
+        "typescript": "latest",
+        "vitest": "^3.2.4"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21"
+    },
+    "description": "Adds grambulation to JavaScript so you can solve problems like (missing footage)!"
+}

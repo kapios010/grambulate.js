@@ -1,22 +1,24 @@
 {
-  "name": "grambulate.js",
+  "name": "grambulate-monorepo",
   "version": "2.0.4",
-  "keywords": [
-    "grambulate",
-    "grambulation",
-    "math"
-  ],
+  "private": false,
   "scripts": {
-    "build": "tsc"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "check-types": "turbo run check-types",
+    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
   },
-  "homepage": "https://github.com/kapios010/grambulate.js",
-  "readme": "https://github.com/kapios010/grambulate.js/blob/main/README.md",
-  "description": "This package lets you use grambulation for many useful operations such as (missing footage) and (photo not found)!",
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "author": "kapios010",
-  "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "@changesets/cli": "^2.29.5",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.4",
+    "typescript": "5.8.3"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
   }
 }
