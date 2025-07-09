@@ -1,6 +1,11 @@
 {
     "name": "grambulate.js",
     "version": "3.0.0",
+    "author": {
+        "name": "kapios010",
+        "url": "https://kapios.dev"
+    },
+    "license": "MIT",
     "type": "module",
     "private": false,
     "main": "./dist/index.js",
