@@ -1,10 +1,15 @@
 {
     "name": "grambulate.js",
+    "version": "3.0.0",
     "type": "module",
     "private": false,
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
     "scripts": {
-        "dev": "tsc --watch",
-        "build": "tsup src/index.ts --format cjs,esm --dts"
+        "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "test": "vitest run --reporter=verbose"
     },
     "exports": {
         ".": {
