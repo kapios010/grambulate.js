@@ -1,6 +1,9 @@
 {
     "name": "grambulate.js",
     "version": "3.0.0",
+    "contributors": [
+        {"name": "DDMPlayer", "url": "https://ddmplayer.itch.io"}
+    ],
     "author": {
         "name": "kapios010",
         "url": "https://kapios.dev"
@@ -35,5 +38,6 @@
     },
     "dependencies": {
         "lodash": "^4.17.21"
-    }
+    },
+    "description": "Adds grambulation to JavaScript so you can solve problems like (missing footage)!"
 }
