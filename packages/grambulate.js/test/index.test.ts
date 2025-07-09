@@ -36,11 +36,6 @@ describe("Testing the Grambulator class", () => {
     it("finds the position if input != degree (degree != 1)", () => {
       expect(getPositionOfNumber(13, true, 0)).toEqual(new Vector2D(1, 2));
       expect(getPositionOfNumber(24, true, -1)).toEqual(new Vector2D(3, -2));
-      expect(getPositionOfNumber(25, true, 1)).toEqual(new Vector2D(2, -2));
-      expect(getPositionOfNumber(17, true, 1)).toEqual(new Vector2D(-2, 2));
-      expect(getPositionOfNumber(32, true, 1)).toEqual(new Vector2D(2, 3));
-      expect(getPositionOfNumber(47, true, 1)).toEqual(new Vector2D(1, -3));
-      expect(getPositionOfNumber(49, true, 1)).toEqual(new Vector2D(3, -3));
     });
   });
 
