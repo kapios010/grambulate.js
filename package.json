@@ -1,7 +1,6 @@
 {
   "name": "grambulate-monorepo",
   "version": "2.0.4",
-  "private": false,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
