@@ -1,4 +1,4 @@
-theme: just-the-docs
+remote_theme: just-the-docs
 title: Grambulate.js Docs
 color_scheme: dark
 logo: "/assets/images/grambulatejsdocs.png"
