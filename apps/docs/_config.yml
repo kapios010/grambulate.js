@@ -10,3 +10,4 @@ aux_links:
 gh_edit_link: false
 plugins:
   - jekyll-default-layout
+  - jekyll-remote-theme
