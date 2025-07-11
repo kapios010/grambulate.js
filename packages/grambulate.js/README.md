@@ -15,7 +15,7 @@ yarn add grambulate.js
 pnpm add grambulate.js
 bun add grambulate.js
 ```
--# or, you know, just, use the button in the sidebar if you want npm
+...or, you know, just, use the button in the sidebar if you want npm
 
 ## What's grambulation?
 
@@ -59,25 +59,19 @@ After that to grambulate the numbers (A, B) you:
 
 ## Getting Started
 
-1. Install grambulate.js using the Installation section
-2. Import and create an instance of the Grambulator class
+1. Install grambulate.js using the commands in the Installation section
+2. To grambulate 2 numbers together use either `grambulatePlus()` for the positive board or `grambulateMinus()` for the negative board:
 ```js
-import { Grambulator } from 'grambulate.js';
+import { grambulatePlus, grambulateMinus } from 'grambulate.js';
 
-let grambulator = new Grambulator()
+grambulatePlus(1, 3) // returns 13
+grambulateMinus(-1, -3) // returns -13
+
+console.log(grambulatePlus(1, 5))
 ```
-3. To grambulate 2 numbers together use either `grambulatePlus()` or `grambulateMinus()`:
+3. To use degrees, add a third argument to either of the functions:
 ```js
-import { Grambulator } from 'grambulate.js';
-
-let grambulator = new Grambulator()
-
-grambulator.grambulatePlus(1, 3) // returns 13
-grambulator.grambulateMinus(-1, -3) // returns -13
-```
-4. To use degrees, add a third argument to either of the functions:
-```js
-grambulator.grambulatePlus(7, 0, -1) // returns 1
+grambulatePlus(7, 0, -1) // returns 1
 ```
 
 

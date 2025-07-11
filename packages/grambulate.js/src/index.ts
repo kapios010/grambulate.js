@@ -97,16 +97,7 @@ export function getPositionOfNumber(
   );
 }
 
-export class Grambulator {
-  public limit: number;
-
-  constructor(spiral_limit: number = 4000) {
-    if (spiral_limit < 1)
-      throw new RangeError("Spiral limit must be greater than 1");
-    this.limit = spiral_limit;
-  }
-
-  public grambulatePlus(
+  export function grambulatePlus(
     inputA: number,
     inputB: number,
     degree: number = 1
@@ -172,17 +163,16 @@ export class Grambulator {
       throw new Error('Failed to calculate.')
   }
 
-  public grambulateMinus = (
+  export function grambulateMinus(
     inputA: number,
     inputB: number,
     degree: number = -1
-  ): number => { 
+  ): number {
     try {
-      return -this.grambulatePlus(-inputA, -inputB, -degree)
+      return -grambulatePlus(-inputA, -inputB, -degree)
     } catch(err) {
       if(err instanceof RangeError)
         throw new RangeError("Inputs cannot be higher than degree.")
       throw err
     }
   }
-}
