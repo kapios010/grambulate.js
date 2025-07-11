@@ -46,7 +46,6 @@
         }
     },
     "devDependencies": {
-        "@grambulate/typescript-config": "workspace:*",
         "@types/lodash": "^4.17.20",
         "tsup": "^8.5.0",
         "typescript": "latest",
