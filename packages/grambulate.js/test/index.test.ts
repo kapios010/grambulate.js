@@ -1,32 +1,32 @@
 import { describe, expect, it, test } from "vitest";
-import { Grambulator, getRingNumber, getPositionOfNumber } from "../src/index";
+import { Grambulator, getRingFromNumber, getPositionOfNumber } from "../src/index";
 import { Vector2D } from "../src/vector2d";
 
 describe("Finding the ring of a number on a positive board", () => {
     test("with degree == 1", () => {
-        expect(getRingNumber(1, true)).toBe(0)
-        expect(getRingNumber(5, true)).toBe(1)
-        expect(getRingNumber(36, true)).toBe(3)
+        expect(getRingFromNumber(1, true)).toBe(0)
+        expect(getRingFromNumber(5, true)).toBe(1)
+        expect(getRingFromNumber(36, true)).toBe(3)
     })
 
     test("with degree != 1", () => {
-        expect(getRingNumber(1, true, 0)).toBe(1)
-        expect(getRingNumber(5, true, -2)).toBe(1)
-        expect(getRingNumber(49, true, -1)).toBe(4)
+        expect(getRingFromNumber(1, true, 0)).toBe(1)
+        expect(getRingFromNumber(5, true, -2)).toBe(1)
+        expect(getRingFromNumber(49, true, -1)).toBe(4)
     })
 })
 
 describe("Finding the ring of a number on a negative board", () => {
     test("with degree == -1", () => {
-        expect(getRingNumber(-1, false)).toBe(0)
-        expect(getRingNumber(-5, false)).toBe(1)
-        expect(getRingNumber(-36, false)).toBe(3)
+        expect(getRingFromNumber(-1, false)).toBe(0)
+        expect(getRingFromNumber(-5, false)).toBe(1)
+        expect(getRingFromNumber(-36, false)).toBe(3)
     })
 
     test("with degree != 1", () => {
-        expect(getRingNumber(-1, false, 0)).toBe(1)
-        expect(getRingNumber(-5, false, 2)).toBe(1)
-        expect(getRingNumber(-49, false, 1)).toBe(4)
+        expect(getRingFromNumber(-1, false, 0)).toBe(1)
+        expect(getRingFromNumber(-5, false, 2)).toBe(1)
+        expect(getRingFromNumber(-49, false, 1)).toBe(4)
     })
 })
 
@@ -134,11 +134,6 @@ describe("Testing the Grambulator class", () => {
         let res3 = grambulator.grambulatePlus(-3, -4, -2);
         expect(res3).toThrowError();
       });
-    });
-
-    it("stops grambulating when the limit has been reached", () => {
-      expect(() => grambulator.grambulatePlus(1, 30000)).toThrowError();
-      expect(() => grambulator.grambulatePlus(-2, 20800)).toThrowError();
     });
   });
 

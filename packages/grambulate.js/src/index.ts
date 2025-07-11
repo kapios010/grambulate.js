@@ -1,11 +1,7 @@
 import { Vector2D } from "./vector2d.js";
 import { isEqual } from "lodash";
 
-interface GrambulationMap<Holder> {
-  [key: number]: Holder;
-}
-
-export function getRingNumber(
+export function getRingFromNumber(
   input: number,
   onPlusBoard: boolean,
   degree: number = onPlusBoard ? 1 : -1
@@ -34,6 +30,12 @@ export function getRingNumber(
   return result;
 }
 
+export function getRingFromPosition(
+  input: Vector2D
+): number {
+  return Math.max(Math.abs(input.x), Math.abs(input.y))
+}
+
 export function getPositionOfNumber(
   input: number,
   onPlusBoard: boolean,
@@ -53,7 +55,7 @@ export function getPositionOfNumber(
   if (input == degree) return new Vector2D(0, 0);
   let pointerValue = degree;
   let pointerPosition = new Vector2D(0, 0);
-  let ring = getRingNumber(input, onPlusBoard, degree);
+  let ring = getRingFromNumber(input, onPlusBoard, degree);
   pointerPosition.moveTo(-ring, ring);
   pointerValue = (multiplier*degree + 4 * Math.pow(ring, 2)) * multiplier;
   if (input == pointerValue) return pointerPosition;
@@ -126,12 +128,10 @@ export class Grambulator {
       positionB
     );
     let positionC = Vector2D.addVector(positionB, vectorAB)
-    console.log(`${positionA} <-> ${positionB} => ${positionC}`)
     if (isEqual(positionC, new Vector2D(0, 0))) return degree;
-    let ring = 0;
+    let ring = getRingFromPosition(positionC);
     let pointerValue = degree;
     let pointerPosition = new Vector2D(0, 0);
-    while (ring < this.limit) {
       pointerPosition.moveTo(-ring, ring);
       pointerValue = (degree + 4 * Math.pow(ring, 2));
       if (isEqual(positionC, pointerPosition)) return pointerValue;
@@ -169,80 +169,20 @@ export class Grambulator {
         if (isEqual(positionC, pointerPosition)) return pointerValue;
       }
       ring++
-    }
-    throw new Error(
-      `Could not get position of number. Reached set spiral limit of ${this.limit}`
-    );
+      throw new Error('Failed to calculate.')
   }
 
-  public grambulateMinus(
+  public grambulateMinus = (
     inputA: number,
     inputB: number,
     degree: number = -1
-  ): number {
-    // Truncate inputs
-    inputA = Math.trunc(inputA);
-    inputB = Math.trunc(inputB);
-    degree = Math.trunc(degree);
-    // Check if inputs are lower than degree
-    if (inputA > degree || inputB > degree)
-      throw new RangeError("Inputs cannot be higher than degree");
-    // If both inputs are the same, the vector is [0,0] so the output is the same number
-    if (inputA == inputB) return inputA;
-    // Declaring variables
-    let positionA: Vector2D = getPositionOfNumber(inputA, false, degree);
-    let positionB: Vector2D = getPositionOfNumber(inputB, false, degree);
-    let vectorAB: Vector2D = Vector2D.calculateFromPoints(
-      positionA,
-      positionB
-    );
-    let positionC = Vector2D.addVector(positionB, vectorAB)
-    console.log(`${positionA} <-> ${positionB} => ${positionC}`)
-    if (isEqual(positionC, new Vector2D(0, 0))) return degree;
-    let ring = 0;
-    let pointerValue = degree;
-    let pointerPosition = new Vector2D(0, 0);
-    while (ring < this.limit) {
-      pointerPosition.moveTo(-ring, ring);
-      pointerValue = -(-degree + 4 * Math.pow(ring, 2));
-      if (isEqual(positionC, pointerPosition)) return pointerValue;
-      // LEFT AND TOP
-      // Left Side of ring
-      while (pointerPosition.y > -ring) {
-        pointerPosition.y--;
-        pointerValue--;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
-      }
-      // Reset to initial position
-      pointerPosition.moveTo(-ring, ring);
-      pointerValue = -(-degree + 4 * Math.pow(ring, 2));
-      // Top Side of ring
-      while (pointerPosition.x < ring) {
-        pointerPosition.x++;
-        pointerValue++;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
-      }
-      // Right side of ring
-      while (pointerPosition.y > -ring + 1) {
-        pointerPosition.y--;
-        pointerValue++;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
-      }
-      // BOTTOM
-      // Set up position
-      pointerPosition.moveTo(ring, -ring);
-      pointerValue = -(-degree - 1 + Math.pow(2 * ring + 1, 2));
-      if (isEqual(positionC, pointerPosition)) return pointerValue;
-      // Bottom side of ring
-      while (pointerPosition.x > -ring) {
-        pointerPosition.x--;
-        pointerValue++;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
-      }
-      ring++
+  ): number => { 
+    try {
+      return -this.grambulatePlus(-inputA, -inputB, -degree)
+    } catch(err) {
+      if(err instanceof RangeError)
+        throw new RangeError("Inputs cannot be higher than degree.")
+      throw err
     }
-    throw new Error(
-      `Could not get position of number. Reached set spiral limit of ${this.limit}`
-    );
   }
 }

@@ -1,8 +1,11 @@
 {
     "name": "grambulate.js",
-    "version": "3.0.1",
+    "version": "3.1.0",
     "contributors": [
-        {"name": "DDMPlayer", "url": "https://ddmplayer.itch.io"}
+        {
+            "name": "DDMPlayer",
+            "url": "https://ddmplayer.itch.io"
+        }
     ],
     "author": {
         "name": "kapios010",
@@ -14,7 +17,14 @@
         "type": "git"
     },
     "homepage": "grambulatejs.kapios.dev",
-    "keywords": ["grambulation", "grambulate", "math", "april", "fools", "boss baby movie 2017 free download"],
+    "keywords": [
+        "grambulation",
+        "grambulate",
+        "math",
+        "april",
+        "fools",
+        "boss baby movie 2017 free download"
+    ],
     "license": "MIT",
     "type": "module",
     "private": false,
