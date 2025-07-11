@@ -29,19 +29,25 @@ On a positive board, inputs can't be lower than the degree. On a negative board 
 ## `grambulatePlus(inputA: number, inputB: number, degree?: number): number`
 
 Grambulates on a positive board.
+
 Inputs:
 
 - `inputA` and `inputB` - the numbers to be grambulated
 - `degree` - the degree of the operation, by default `1`
-  Output:
+
+Output:
+
   The result of the operation
 
 ## `grambulateMinus(inputA: number, inputB: number, degree?: number): number`
 
 Grambulates on a negative board.
+
 Inputs:
 
 - `inputA` and `inputB` - the numbers to be grambulated
 - `degree` - the degree of the operation, by default `-1`
+
 Output:
+
   The result of the operation
