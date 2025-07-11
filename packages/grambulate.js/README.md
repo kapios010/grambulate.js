@@ -4,7 +4,7 @@ This package lets you grambulate, so you can solve important problems such as (m
 
 Made according to [this solution by u/DragonballQ](https://www.reddit.com/r/mathmemes/comments/tvn2gj/the_solution_to_the_april_fools_math/), but also with expanded features!
 
-Now updated to version 3!
+Now updated to version 4!
 
 ## Installation
 

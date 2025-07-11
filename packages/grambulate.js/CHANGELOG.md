@@ -1,5 +1,28 @@
 # grambulate.js
 
+## 4.0.0
+
+### Major Changes
+
+- Remove Grambulator class and spiral limit. Move grambulation functions to direct export.
+  - Before:
+
+  ```js
+  import { Grambulator } from "grambulate.js";
+
+  let g = new Grambulator();
+
+  g.grambulatePlus(1, 3);
+  ```
+
+  - After:
+
+  ```js
+  import { grambulatePlus } from "grambulate.js";
+
+  grambulatePlus(1, 3);
+  ```
+
 ## 3.1.0
 
 ### Minor Changes
