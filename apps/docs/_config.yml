@@ -3,8 +3,8 @@ title: Grambulate.js Docs
 color_scheme: dark
 logo: "/assets/images/grambulatejsdocs.png"
 aux_links:
-  "grambulate.js on npm"
+  "grambulate.js on npm":
     - "https://www.npmjs.com/package/grambulate.js"
-  "kapios.dev"
+  "kapios.dev":
     - "https://kapios.dev"
 gh_edit_link: false
