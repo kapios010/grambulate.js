@@ -1,4 +1,4 @@
-remote_theme: just-the-docs
+theme: just-the-docs
 title: Grambulate.js Docs
 color_scheme: dark
 logo: "/assets/images/grambulatejsdocs.png"
@@ -8,3 +8,5 @@ aux_links:
   "kapios.dev":
     - "https://kapios.dev"
 gh_edit_link: false
+plugins:
+  - jekyll-default-layout
