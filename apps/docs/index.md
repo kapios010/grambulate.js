@@ -1,4 +1,4 @@
-# grambulate.js
+![grambulate.js](/assets/images/grambulatejsdocs.png)
 
 ## About
 
