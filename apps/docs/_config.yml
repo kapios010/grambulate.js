@@ -11,3 +11,10 @@ gh_edit_link: false
 plugins:
   - jekyll-default-layout
   - jekyll-remote-theme
+callouts:
+  note:
+    title: Note
+    color: blue
+  warning:
+    title: Warning
+    color: red

@@ -8,7 +8,7 @@ grambulate.js is a [Node.js](https://nodejs.org/en) module that allows you to pe
 
 To install the package from npm, use one of the following commands depending on the package manager you're using.
 
-```cmd
+```bash
 npm install grambulate.js
 yarn add grambulate.js
 pnpm add grambulate.js
@@ -17,7 +17,7 @@ bun add grambulate.js
 
 ## Example usage
 
-{: .note}
+{: .note }
 These examples use [ES Modules](https://nodejs.org/api/esm.html#enabling) syntax
 
 1. Install grambulate.js using one of the installation commands above
