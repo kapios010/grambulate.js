@@ -51,8 +51,5 @@
         "typescript": "latest",
         "vitest": "^3.2.4"
     },
-    "dependencies": {
-        "lodash": "^4.17.21"
-    },
     "description": "Adds grambulation to JavaScript so you can solve problems like (missing footage)!"
 }

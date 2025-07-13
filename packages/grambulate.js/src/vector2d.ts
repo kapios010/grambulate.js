@@ -10,6 +10,10 @@ export class Vector2D {
     return new Vector2D(point.x + vector.x, point.y + vector.y)
   }
 
+  static compare(a: Vector2D, b: Vector2D) {
+    return a.x == b.x && a.y == b.y
+  }
+
   constructor(x: number, y: number) {
     this.x = x;
     this.y = y;

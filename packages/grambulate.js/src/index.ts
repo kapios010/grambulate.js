@@ -1,5 +1,4 @@
 import { Vector2D } from "./vector2d.js";
-import { isEqual } from "lodash";
 
 export function getRingFromNumber(
   input: number,
@@ -119,19 +118,19 @@ export function getPositionOfNumber(
       positionB
     );
     let positionC = Vector2D.addVector(positionB, vectorAB)
-    if (isEqual(positionC, new Vector2D(0, 0))) return degree;
+    if (Vector2D.compare(positionC, new Vector2D(0, 0))) return degree;
     let ring = getRingFromPosition(positionC);
     let pointerValue = degree;
     let pointerPosition = new Vector2D(0, 0);
       pointerPosition.moveTo(-ring, ring);
       pointerValue = (degree + 4 * Math.pow(ring, 2));
-      if (isEqual(positionC, pointerPosition)) return pointerValue;
+      if (Vector2D.compare(positionC, pointerPosition)) return pointerValue;
       // LEFT AND TOP
       // Left Side of ring
       while (pointerPosition.y > -ring) {
         pointerPosition.y--;
         pointerValue ++;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
+        if (Vector2D.compare(positionC, pointerPosition)) return pointerValue;
       }
       // Reset to initial position
       pointerPosition.moveTo(-ring, ring);
@@ -140,24 +139,24 @@ export function getPositionOfNumber(
       while (pointerPosition.x < ring) {
         pointerPosition.x++;
         pointerValue--;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
+        if (Vector2D.compare(positionC, pointerPosition)) return pointerValue;
       }
       // Right side of ring
       while (pointerPosition.y > -ring + 1) {
         pointerPosition.y--;
         pointerValue--;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
+        if (Vector2D.compare(positionC, pointerPosition)) return pointerValue;
       }
       // BOTTOM
       // Set up position
       pointerPosition.moveTo(ring, -ring);
       pointerValue = (degree - 1 + Math.pow(2 * ring + 1, 2));
-      if (isEqual(positionC, pointerPosition)) return pointerValue;
+      if (Vector2D.compare(positionC, pointerPosition)) return pointerValue;
       // Bottom side of ring
       while (pointerPosition.x > -ring) {
         pointerPosition.x--;
         pointerValue--;
-        if (isEqual(positionC, pointerPosition)) return pointerValue;
+        if (Vector2D.compare(positionC, pointerPosition)) return pointerValue;
       }
       ring++
       throw new Error('Failed to calculate.')
