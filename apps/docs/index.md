@@ -34,3 +34,6 @@ console.log(grambulateMinus(-1, -3))
 ## Is there more?
 
 The package contains other functions that help perform the main grambulation operation. These are not necessary for standard use of the package, but if you'd like to go more in-depth, they're documented here!
+
+{: .note }
+They aren't yet, I'm working on it though!
