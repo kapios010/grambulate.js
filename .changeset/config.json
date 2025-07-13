@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@grambulate/eslint-config"]
+  "ignore": ["@grambulate/eslint-config", "@grambulate/grambulator-bot"]
 }

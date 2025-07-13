@@ -1,5 +1,11 @@
 # grambulate.js
 
+## 4.1.0
+
+### Minor Changes
+
+- 89b5041: Remove lodash dependency
+
 ## 4.0.0
 
 ### Major Changes
