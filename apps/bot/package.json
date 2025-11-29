@@ -2,18 +2,20 @@
     "name": "@grambulate/grambulator-bot",
     "version": "0.0.0",
     "type": "module",
-    "private":true,
+    "private": true,
     "dependencies": {
         "discord.js": "^14.21.0",
         "dotenv": "^17.2.0",
         "grambulate.js": "workspace:*"
     },
     "devDependencies": {
-        "tsc": "^2.0.4",
-        "tsx": "^4.20.3"
+        "tsx": "^4.20.3",
+        "typescript": "^5.8.3"
     },
     "main": "./src/index.ts",
     "scripts": {
-        "dev": "tsx ."
+        "dev": "tsx .",
+        "build": "tsc",
+        "start": "node ./build"
     }
 }
