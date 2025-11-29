@@ -1,5 +1,11 @@
 # grambulate.js
 
+## 4.1.1
+
+### Patch Changes
+
+- c25f248: Update package.json to include new website.
+
 ## 4.1.0
 
 ### Minor Changes
