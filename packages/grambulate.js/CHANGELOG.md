@@ -1,5 +1,11 @@
 # grambulate.js
 
+## 4.1.2
+
+### Patch Changes
+
+- 1eb2950: Update some devDependencies
+
 ## 4.1.1
 
 ### Patch Changes
